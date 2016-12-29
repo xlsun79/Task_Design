@@ -9,7 +9,7 @@ classdef ArmDynamicsTask < DisplayTask
         center
 
         target
-        followThroughTarget
+%        followThroughTarget
 %         targetR
 %         targetL
 %         targetLeft
@@ -62,7 +62,7 @@ classdef ArmDynamicsTask < DisplayTask
 %             task.targetR = RectangleGradientTarget();
 %             task.targetR.hide();
 %             task.dc.mgr.add(task.targetR);
-% 
+%
 %             task.targetL = RectangleGradientTarget();
 %             task.targetL.hide();
 %             task.dc.mgr.add(task.targetL);
@@ -160,7 +160,7 @@ classdef ArmDynamicsTask < DisplayTask
         function pause(task, ~)
             task.center.hide();
             task.target.hide();
-            task.followThroughTarget.hide();
+%            task.followThroughTarget.hide();
 %             task.targetR.hide();
 %             task.targetL.hide();
 %             task.targetLeft.hide();
@@ -205,8 +205,8 @@ classdef ArmDynamicsTask < DisplayTask
 
             task.hitObstacleThisTrial = false;
 
-%            task.followThroughTarget.pointsX = C.followTargetX;
-%            task.followThroughTarget.pointsY = C.followTargetY; % XS-will match these with the positions of follow through targets sent by the the condition bus
+%            task.followThroughTarget.pointsX = C.followTargetPointsX;
+%            task.followThroughTarget.pointsY = C.followTargetPointsY; % XS-will match these with the positions of follow through targets sent by the the condition bus
 %            task.followThroughTarget.depth = C.targetDepth;
 %            task.followThroughTarget.theta = C.targetTheta;
 %            task.followThroughTarget.width = C.followTargetWidth; % XS-will match these with the positions of follow through targets sent by the condition bus
@@ -277,7 +277,7 @@ classdef ArmDynamicsTask < DisplayTask
 %                 task.targetR.dim(P.inactiveTargetContrast);
 %                 task.targetR.hide();
 %             end
-% 
+%
 %             if C.hasTargetL
 %                 task.targetL.xc = C.jumpTargetX;
 %                 task.targetL.yc = C.jumpTargetY;
@@ -514,18 +514,18 @@ classdef ArmDynamicsTask < DisplayTask
 %         function TargetJumpR(task, data)
 %             task.dc.log('Target Jump R');
 %             C = data.C;
-% 
+%
 % %             if strcmpi(C.targetNamePostShift, 'TargCW')
 %                 task.target.hide();
 %                 task.targetR.show();
 %                 task.targetActive = task.targetR;
 % %             end
 %         end
-% 
+%
 %         function TargetJumpL(task, data)
 %             task.dc.log('Target Jump L');
 %             C = data.C;
-% 
+%
 % %             if strcmpi(C.targetNamePostShift, 'TargCCW')
 %                 task.target.hide();
 %                 task.targetL.show();
@@ -653,7 +653,7 @@ classdef ArmDynamicsTask < DisplayTask
 %                 task.targetR.stopVibrating();
 %                 task.targetR.flyAway(task.cursor.xc, task.cursor.yc);
 %             end
-% 
+%
 %             if C.hasTargetL
 %                 task.targetL.contour();
 %                 task.targetL.stopVibrating();
@@ -693,7 +693,7 @@ classdef ArmDynamicsTask < DisplayTask
             task.target.flyAway(task.cursor.xc, task.cursor.yc);
 %            task.followThoughtarget.flyAway(task.cursor.xc, task.cursor.yc);
 
-% 
+%
 %             if C.hasTargetR
 %                 task.targetR.flyAway(task.cursor.xc, task.cursor.yc);
 %             end
